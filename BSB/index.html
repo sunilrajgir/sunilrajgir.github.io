@@ -1,0 +1,1353 @@
+
+<html><head>
+
+    <meta charset="UTF-8">
+
+    <title>To 11:00 and Beyond !!</title>
+
+</head>
+
+
+
+<body>
+
+    <style>
+
+        @-webkit-keyframes AA_Highlight {
+
+            0% {
+
+                background: rgba(0,0,0,0);
+
+                color: black;
+
+            }
+
+
+
+            50% {
+
+                background: rgba(255,0,0,0.3);
+
+                color: white;
+
+            }
+
+
+
+            100% {
+
+                background: rgba(0,0,0,0);
+
+                color: black;
+
+            }
+
+        }
+
+
+
+        @keyframes AA_Highlight {
+
+            0% {
+
+                background: rgba(0,0,0,0);
+
+                color: black;
+
+            }
+
+
+
+            50% {
+
+                background: rgba(255,0,0,0.3);
+
+                color: white;
+
+            }
+
+
+
+            100% {
+
+                background: rgba(0,0,0,0);
+
+                color: black;
+
+            }
+
+        }
+
+
+
+        @-webkit-keyframes AA_Win8_Rotate {
+
+            from {
+
+                margin-left: 100px;
+
+                opacity: 0;
+
+                transform: rotateY(-180deg);
+
+            }
+
+
+
+            to {
+
+                margin-left: 0px;
+
+                opacity: 1;
+
+                transform: rotateY(0deg);
+
+            }
+
+        }
+
+
+
+        @keyframes AA_Win8_Rotate {
+
+            from {
+
+                margin-left: 100px;
+
+                opacity: 0;
+
+                transform: rotateY(-180deg);
+
+            }
+
+
+
+            to {
+
+                margin-left: 0px;
+
+                opacity: 1;
+
+                transform: rotateY(0deg);
+
+            }
+
+        }
+
+
+
+        @-webkit-keyframes AA_ShowEffect {
+
+            from {
+
+                opacity: 0;
+
+                margin-left: 100px;
+
+            }
+
+
+
+            to {
+
+                opacity: 1;
+
+                margin-top: 0px;
+
+            }
+
+        }
+
+
+
+
+
+        @keyframes AA_ShowEffect {
+
+            from {
+
+                opacity: 0;
+
+                margin-left: 100px;
+
+            }
+
+
+
+            to {
+
+                opacity: 1;
+
+                margin-top: 0px;
+
+            }
+
+        }
+
+
+
+        @-webkit-keyframes AA_HideEffect {
+
+            from {
+
+                opacity: 1;
+
+                margin-top: 0px;
+
+            }
+
+
+
+            to {
+
+                opacity: 0;
+
+                margin-top: -10px;
+
+                -webkit-transform: perspective( 600px ) rotateX( -5deg );
+
+            }
+
+        }
+
+
+
+        @keyframes AA_HideEffect {
+
+            from {
+
+                opacity: 1;
+
+                margin-top: 0px;
+
+            }
+
+
+
+            to {
+
+                opacity: 0;
+
+                margin-top: -100px;
+
+                transform: perspective( 600px ) rotateX( -5deg );
+
+            }
+
+        }
+
+
+
+
+
+        @-webkit-keyframes InnerTileAnimation {
+
+
+
+            to {
+
+                -webkit-transform: perspective( 600px ) rotateX( -360deg );
+
+            }
+
+        }
+
+
+
+        @keyframes InnerTileAnimation {
+
+
+
+            to {
+
+                transform: perspective( 600px ) rotateX(-360deg );
+
+            }
+
+        }
+
+
+
+        .The_Wall {
+
+            width: 1400px;
+
+            margin: 0 auto;
+
+        }
+
+
+
+        .Tiles {
+
+            text-align: center;
+
+            float: left;
+
+            margin: 5px;
+
+            width: 260px;
+
+            box-sizing: border-box;
+
+        }
+
+
+
+            .Tiles > .front {
+
+                position: absolute;
+
+                width: 260px;
+
+                height: 128px;
+
+                color: red;
+
+                border-radius: 2px;
+
+                border-style: solid;
+
+                border-color: black;
+
+                -webkit-backface-visibility: hidden;
+
+                backface-visibility: hidden;
+
+                -webkit-transform: perspective( 600px ) rotateY( 20deg );
+
+                transform: perspective( 600px ) rotateY( 20deg );
+
+                transition: -webkit-transform 0.3s cubic-bezier(.9,.25,.25,.9);
+
+                transition: transform 0.3s cubic-bezier(.9,.25,.25,.9);
+
+            }
+
+
+
+            .Tiles > .back {
+
+                position: absolute;
+
+                width: 260px;
+
+                height: 128px;
+
+                border-radius: 2px;
+
+                border-style: solid;
+
+                border-color: red;
+
+                -webkit-backface-visibility: hidden;
+
+                backface-visibility: hidden;
+
+                -webkit-transform: perspective( 600px ) rotateY( 200deg );
+
+                transform: perspective( 600px ) rotateY( 200deg );
+
+                transition: -webkit-transform 0.3s cubic-bezier(.9,.25,.25,.9);
+
+                transition: transform 0.3s cubic-bezier(.9,.25,.25,.9);
+
+            }
+
+
+
+            .Tiles:hover > .front {
+
+                -webkit-transform: perspective( 600px ) rotateY( -180deg );
+
+                transform: perspective( 600px ) rotateY( -180deg );
+
+            }
+
+
+
+            .Tiles:hover > .back {
+
+                -webkit-transform: perspective( 600px ) rotateY( 20deg );
+
+                transform: perspective( 600px ) rotateY( 20deg );
+
+            }
+
+
+
+        .Bottom_Section {
+
+            width: 1350px;
+
+            position: absolute;
+
+            margin-top: 180px;
+
+            clear: both;
+
+            padding: 10px;
+
+        }
+
+
+
+            .Bottom_Section > .Bottom_Left, .Bottom_Section > .Bottom_Right {
+
+                float: left;
+
+                display: table;
+
+                margin: 0 auto;
+
+                margin-top: 150px;
+
+                padding: 10px;
+
+            }
+
+
+
+        .Bottom_Left {
+
+            width: 400px;
+
+            margin-right: 10px;
+
+        }
+
+
+
+        .Bottom_Right {
+
+            margin-bottom: 30px;
+
+            width: 900px;
+
+        }
+
+
+
+        .Bottom_LeftShow {
+
+            animation: AA_ShowEffect 500ms cubic-bezier(.24,.59,.26,.94);
+
+            -webkit-animation: AA_ShowEffect 500ms cubic-bezier(.24,.59,.26,.94);
+
+            animation-fill-mode: forwards;
+
+            -webkit-animation-fill-mode: forwards;
+
+        }
+
+
+
+        .Bottom_LeftHide {
+
+            animation: AA_HideEffect 500ms cubic-bezier(.24,.59,.26,.94);
+
+            -webkit-animation: AA_HideEffect 500ms cubic-bezier(.24,.59,.26,.94);
+
+            animation-fill-mode: forwards;
+
+            -webkit-animation-fill-mode: forwards;
+
+        }
+
+
+
+        .IN_Title {
+
+            margin-top: 37px;
+
+        }
+
+
+
+        .Tiles .back > div {
+
+            margin-left: 200px;
+
+            margin-top: 50px;
+
+        }
+
+
+
+        .Tiles .front > div {
+
+            margin-left: 100px;
+
+            margin-top: 50px;
+
+        }
+
+
+
+        .Tiles:hover > .back > div, .Tiles:hover .front > div {
+
+            margin-left: -100px;
+
+        }
+
+
+
+        div {
+
+            -webkit-transition: margin 2.5s cubic-bezier(.24,.59,.26,.94);
+
+            transition: margin 2.5s cubic-bezier(.24,.59,.26,.94);
+
+        }
+
+
+
+        a {
+
+            text-decoration: none;
+
+        }
+
+
+
+        .hidden {
+
+            display: none;
+
+        }
+
+
+
+        .InnerTile {
+
+            cursor: pointer;
+
+            text-align: center;
+
+            float: left;
+
+            border-style: solid;
+
+            border-color: red;
+
+            border-radius: 75px;
+
+            box-sizing: border-box;
+
+            background-color: #DEDEDE;
+
+            width: 150px;
+
+            height: 150px;
+
+            animation: AA_Win8_Rotate 500ms;
+
+            -webkit-animation: AA_Win8_Rotate 500ms;
+
+            animation-timing-function: cubic-bezier(0.055, 0.865, 0.075, 1.000);
+
+            -webkit-animation-timing-function: cubic-bezier(0.055, 0.865, 0.075, 1.000);
+
+            animation-fill-mode: forwards;
+
+            -webkit-animation-fill-mode: forwards;
+
+            margin-right: 10px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+
+        .IN_Title {
+
+            margin-top: 60px;
+
+        }
+
+
+
+        .InnerTileAnimationClick {
+
+            animation: InnerTileAnimation 500ms cubic-bezier(.24,.59,.26,.94);
+
+            -webkit-animation: InnerTileAnimation 500ms cubic-bezier(.24,.59,.26,.94);
+
+        }
+
+
+
+        .ActualContent {
+
+            height: 600px;
+
+            background-size: contain;
+
+            padding: 20px;
+
+            color: red;
+
+            font-weight: bold;
+
+        }
+
+
+
+        .button-link {
+
+            color: #FFF;
+
+            -webkit-border-radius: 4px;
+
+            -moz-border-radius: 4px;
+
+            border-radius: 4px;
+
+            border: solid 2px #20538D;
+
+            text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+
+            -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+
+            -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+
+            -webkit-transition-duration: 0.2s;
+
+            -moz-transition-duration: 0.2s;
+
+            transition-duration: 0.2s;
+
+            -webkit-user-select: none;
+
+            -moz-user-select: none;
+
+            -ms-user-select: none;
+
+            user-select: none;
+
+            text-decoration: none;
+
+            display: table;
+
+            margin: 0 auto;
+
+            width: 30px;
+
+            height: 30px;
+
+            border-radius: 17px;
+
+            margin-top: 55px;
+
+        }
+
+
+
+            .button-link:hover {
+
+                background: #356094;
+
+                border: solid 2px #2A4E77;
+
+                text-decoration: none;
+
+            }
+
+
+
+            .button-link:active {
+
+                -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+
+                -moz-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+
+                box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+
+                background: #2E5481;
+
+                border: solid 2px #203E5F;
+
+            }
+
+
+
+        .fadein, .fadeout {
+
+            opacity: 0;
+
+            -moz-transition: opacity 0.4s ease-in-out;
+
+            -o-transition: opacity 0.4s ease-in-out;
+
+            -webkit-transition: opacity 0.4s ease-in-out;
+
+            transition: opacity 0.4s ease-in-out;
+
+        }
+
+
+
+        .fadein {
+
+            opacity: 1;
+
+        }
+
+    </style>
+
+    <div class="The_Wall">
+
+        <div class="Top_Section">
+
+            <div class="Tiles" data-tilecount="2">
+
+                <div class="back">
+
+                    <div>?Who ?What ?When</div>
+
+                </div>
+
+                <div class="front">
+
+                    <div>Story, Feature, Task, Bug </div>
+
+                    <div class="hidden">
+
+                        <div class="InnerTile">
+
+                            <div class="IN_Title">iSameer</div>
+
+                            <div class="ActualContent hidden" data-innertilecount="1">
+                            Simply "SWISS ARMY KNIFE".
+                            <br>
+                            <br>
+                            <br>
+                        	Sameer I admire you a lot. Not only do you work mast se, but you also have such a well balanced life. That is the kind of life one should strive for.
+                        	<br>
+                        	<br>
+                        	Learning in one direction is not enough, learning in all direction is important I learn these things from you.
+                        	<br>
+                        	 I just wanted to discuss with you on great chats on various social issues cos we share a similar wavelength.
+                        	You are one of my favourite Manager, who's work is not just to take all work items from cave and throw it on to team members, but also to ensure your team members were content and relaxed. Thanks for being a Real Manager.
+
+                                <br>
+
+                                Your patience with new bachalogs is truly amazing and it helped me immensely
+                            </div>
+
+                        </div>
+
+                        <div class="InnerTile">
+
+                            <div class="IN_Title">iAnkit</div>
+
+                            <div class="ActualContent hidden" data-innertilecount="2">
+
+                            When someone says App is crashing, the first thing that comes to my mind is 'I hate that CRASH word', and then second thing is the sigh of relief when I realise that Ankit is still in company to resolve to ho hee jaega.<br>
+
+                                <br>
+							Ankit Sir Please keep your mobile phone always On, because you will get call from me at any time.
+							Your name always will come first in my mind when I will face any bloaker in iOS.
+							Thanks a lot for giving me opportunity to explore iOS and people will call me iOS developer because of u.
+                            </div>
+
+                        </div>
+
+                        <div class="InnerTile">
+
+                            <div class="IN_Title">iAbhyaraj</div>
+
+                            <div class="ActualContent hidden" data-innertilecount="3">
+                            
+                            One of the coolest sardar ji in my team,
+                            I learn a lot from you boss,
+                            Jo dikhta hai wahi bikta suits U boss.
+                            I met one person who does not rely on Designer and who work without the threat of danger, pain, or harm. 
+
+                            </div>
+
+                        </div>
+
+                        <div class="InnerTile">
+
+                            <div class="IN_Title">iVishwender</div>
+
+                            <div class="ActualContent hidden" data-innertilecount="4">
+                            
+                            	How to keep body feet, people can learn from you.
+                            	Bhai office ka khana ka sahi use tum hi karta hai. 
+								Be in touch,  
+                            </div>
+
+                        </div>
+
+                        <div class="InnerTile">
+
+                            <div class="IN_Title">iBhartendu </div>
+
+                            <div class="ActualContent hidden" data-innertilecount="5">
+								michael jackson of iOS.
+								Nasha sharab me hoti to nachti botal. Dude etna mat piya kar ***E
+                            </div>
+
+                        </div>
+
+                        <div class="InnerTile">
+
+                            <div class="IN_Title">aAnkit</div>
+
+                            <div class="ActualContent hidden" data-innertilecount="6">
+
+                                you always realised me "latecomers of my school days"
+								Any way you are responsible person to give "tucker" to Bharat in PJ.
+                            </div>
+
+                        </div>
+
+                        <div class="InnerTile">
+
+                            <div class="IN_Title">aBharat</div>
+
+                            <div class="ActualContent hidden" data-innertilecount="7">
+
+                                Dude you should know that you were really responsible for the fun we had in Playlist++ story. 
+                                <br>
+                                <br>
+                                <br>
+                                Mast banda hai bae tu. I thought my sense of humor was good, but you made me realise that I have a lot to improve upon. Plus, your eccentric persona fills so much positivity even though you jokingly crib about everything.
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="InnerTile">
+
+                            <div class="IN_Title">aChandraveen</div>
+
+                            <div class="ActualContent hidden" data-innertilecount="8">
+
+                                Yaar Pura bhasad macha ke rakha h
+                                <br>
+                                OO ...k don't do this, never do this
+                                <br>
+                                Bhai etna bhasad mat machaya kar
+                            </div>
+
+                        </div>
+
+                        <div class="InnerTile">
+
+                            <div class="IN_Title">aAnurag</div>
+
+                            <div class="ActualContent hidden" data-innertilecount="9">
+                            
+							Give us chance to see your Nagin Dance.
+							
+							 
+
+                            </div>
+
+                        </div>
+                        
+                        <div class="InnerTile">
+
+                            <div class="IN_Title">bAnurag</div>
+
+                            <div class="ActualContent hidden" data-innertilecount="10">
+                            	Mishra Ji mujhe BE nahi sikhaya boss, Koi bat nahi mujhe thora thora aa gya h.
+								By the way Staging is down... Thug life
+								
+
+                            </div>
+
+                        </div>
+
+                        <div class="InnerTile">
+
+                            <div class="IN_Title">Mohit</div>
+
+                            <div class="ActualContent hidden" data-innertilecount="11">
+
+                                Hadda vine shop mein kuch bhi nahi bacha, kuch tho hum logon kae liyae chod.
+                                Kapil sharma of wynk team, If you want to check go to his desk and open your mouth...
+                                
+                            </div>
+
+                        </div>
+
+                        <div class="InnerTile">
+
+                            <div class="IN_Title">Shivani</div>
+
+                            <div class="ActualContent hidden" data-innertilecount="12">
+
+                                Straightforward and simple, sweet when happy, dreadful when angry. <strong>Hmmmmm....</strong><br>
+
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+								Any way Shivani testing is famus in Wynk. Please do not ask related to Shivani testing in interview.
+								Its property of Wynk. 
+                                <strong>Hmmmmm....</strong>.
+                                <br> 
+                                Enjoy your coming days in Wynk, something that I could not. :p <br>
+                                <br>
+                                I learn from you, kam ko aise karo ki us kam ko proud ho ki usko tumne kiya (SRK dialog)
+                                
+                                <br>
+                                <br>
+                                Tu fikar not.. Gaaon waalae tera achha khayaal rakhengae. Changi reh, but road pae nahi.<br>
+
+                            </div>
+
+                        </div>
+
+                        <div class="InnerTile">
+
+                            <div class="IN_Title">Manu</div>
+
+                            <div class="ActualContent hidden" data-innertilecount="13">
+							Monu chalega...
+							<br>
+							<br>
+							<br>
+							Most useful dude in the wynk team if you want to continue music on Wynk.
+							Honest and Believable friend
+							<br	> 
+							Dude yaar ek mujhe bhi dila de ....
+                            </div>
+
+                        </div>
+
+                        <div class="InnerTile">	
+
+                            <div class="IN_Title">Varun</div>
+
+                            <div class="ActualContent hidden" data-innertilecount="14">
+	                            Dude you still din give me your car!!! Those mysterious scratches you'll find on your car someday... I know nothing about them. (By the way, When is your next show??)
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="Tiles" data-tilecount="3">
+
+                <div class="back">
+
+                    <div>Execution Summary</div>
+
+                </div>
+
+                <div class="front">
+
+                    <div>Status Update</div>
+
+                    <div class="hidden">
+
+                        <div class="InnerTile">
+
+                            <div class="IN_Title">Company</div>
+
+                            <div class="hidden">
+
+                                Wynk is, without any doubt, one of the best in its class to help you grow technically and professionally. The liberty to plan and develop the way you want, pushes you into thinking of various scenarios and the best ways to deal with them all.<br>
+
+                                <br>
+
+                                So you might have to run up the stairs till 3 floors, but you can rest assured that you will breathe easy later on.
+
+                            </div>
+
+                        </div>
+
+                        <div class="InnerTile">
+
+                            <div class="IN_Title">Projects</div>
+
+                            <div class="hidden">
+
+								<div class="ActualContent hidden" data-innertilecount="14">
+								<a href="https://github.com/BSBPortal/music-iphone/graphs/contributors">Check contribution [SunKum]</a>
+								</div>
+                            </div>
+
+                        </div>
+
+                        <div class="InnerTile">
+
+                            <div class="IN_Title">Secret Admirations</div>
+
+                            <div class="hidden">
+
+                                <strong>Nitin Malhotra</strong> Most of time I saw you writing something on board, discussion, clarification etc which is core part of Software Development. I always excited to work/solve such type of problems and then implement it. I hope in future I will get those things.
+                                <br>
+                                <br>
+                                <strong>Ankit Sriwastava</strong> - I met most funniest team Lead, when ever I went to you, I return with smile on my face. This is the best part of a lead. keep in touch :) 
+                                <br>
+                                <br>
+								<Strong> Rakesh Sharma </strong> Friendly manager, realistic manager, Who thinks about their team member both professionally and personnel and  I learn a lot of things from you sirrr
+                            </div>
+
+                        </div>
+
+                        <div class="InnerTile">
+
+                            <div class="IN_Title">Apologies</div>
+
+                            <div class="hidden">
+
+                                If I have unwittingly hurt someone, then I am truly sorry for it. You can ping me to help me realise my mistakes and apologise for it. :p
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="Tiles" data-tilecount="4">
+
+                <div class="back">
+
+                    <div>Philosophy</div>
+
+                </div>
+
+                <div class="front">
+
+                    <div>KT session</div>
+
+                    <div class="hidden">
+
+                        <div class="InnerTile">
+
+                            <div class="IN_Title">Leadership</div>
+
+                            <div class="hidden">
+
+                                I was lucky to have great mentors and POCs and leads and Managers and collegues.
+                                <br>
+                                Many of them helped me to become better and better in several ways.
+                                <br>
+                                A good lead have sense of life beyond himself, anybody can become leader who can think, feel, to act more people rather than himself. Otherwise he will be called modern Dhritarashtra.
+                                <br>
+                                
+                                Those people show traits of <b>Leadership</b> as mentioned <a href="https://www.ted.com/talks/simon_sinek_why_good_leaders_make_you_feel_safe#t-404746" target="_blank">Simon Sinek: Why good leaders make you feel safe</a> and <a href="https://www.facebook.com/video.php?v=580833165379740" target="_blank">Dr Abdul Kalam's inspirational Speech on Leadership</a>.<br>
+
+                                <br>
+
+                                And I thank you all for being that way.
+
+                            </div>
+
+                        </div>
+
+                        <div class="InnerTile">
+
+                            <div class="IN_Title">Respect</div>
+
+                            <div class="hidden">
+
+                                One thing that people want in life is simply, respect. If you hurt someone by disrespecting that person, then you lack a trait that is fundamental to being human being. Everyone deserves this respect, your juniors, colleagues, friends and seniors. The only people who don't deserve this respect is the one who lacks this fundamental trait.
+                            </div>
+
+                        </div>
+
+                        <div class="InnerTile">
+
+                            <div class="IN_Title">Success</div>
+
+                            <div class="hidden">
+
+								 People can get rich even by selling tomatoes or a crappy game like Flappy Bird(still don't know how that got viral). Personal success is when you achieve what you want to, and not what the society defines for you. A father/mother who has given decent education to his/her child, has succeeded in life. MKG could have been a rich lawyer, but he became an immortal hero. He succeeded in his life. Bhagat singh succeeded in his life. Malala succeeded in her life. Kailash Satyarthi succeeded in his life. If that Satisfies you, then that is all you need to do be called a Successful person.<br>
+
+                                <br>
+
+                                Rich != Successful Life<br>
+
+                                Satisfaction = Successful Life
+
+                            </div>
+
+                        </div>
+
+                        <div class="InnerTile">
+
+                            <div class="IN_Title">Life</div>
+
+                            <div class="hidden">
+
+                                Sugar, Spice and Everything Nice. These were the ingredients chosen to create your perfect little sojourn on earth. Don't forget to live it. Whatever it takes, do everything to make YOURSELF happy.<br>
+
+                                <br>
+
+                                Smile. :)
+
+                            </div>
+
+                        </div>
+
+                        <div class="InnerTile">
+
+                            <div class="IN_Title">Cleanliness</div>
+
+                            <div class="hidden">
+
+                                Don't be a Gadha Chaed.<br>
+
+                                Throw your rubbish in the dustbin and stop whining about India being dirty.
+
+                            </div>
+
+                        </div>
+
+                        <div class="InnerTile">
+
+                            <div class="IN_Title">Science</div>
+
+                            <div class="hidden">
+
+                                Life is much more complicated and appreciative when you try to understand the <i>hows</i> and <i>whys</i> rather than <i>ooh choo-mantar, that's why</i>. Religion tried to answer complicated things like life and purpose, but with time, science found more believable answers.<br><br>
+
+                                I know I sound just like a regular evangelist from a regular faith. But Science is not regular. If A says the Earth is at the center of universe, and B says otherwise, then science accepts only that argument which is more palpable.<br><br>
+
+                                So don't waste this life trying to find a piece of bread which resembles you religious symbol, rather try to understand how that bread was made - right from electrons and atoms to heating in the oven and ready to eat form.
+
+                            </div>
+
+                        </div>
+
+                        <div class="InnerTile">
+
+                            <div class="IN_Title">End</div>
+
+                            <div class="hidden">
+
+                                Seriously the end. Wish you all the best.<br>
+
+                                Make this world a better pla.... <br>Ok.. :|
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="Tiles" data-tilecount="5">
+
+                <div class="back">
+
+                    <div>Ping me</div>
+
+                </div>
+
+                <div class="front">
+
+                    <div>Contact</div>
+
+                    <div class="hidden">
+
+                        <div class="InnerTile">
+
+                            <div class="IN_Title">Facebook</div>
+
+                            <div class="hidden">
+
+                                <a href="https://www.facebook.com/sunilrajgir" class="button-link" target="_blank"> FACEBOOK</a>
+
+                            </div>
+
+                        </div>
+
+                        <div class="InnerTile">
+
+                            <div class="IN_Title">Twitter</div>
+
+                            <div class="hidden">
+
+                                <a href="https://twitter.com/sunilrajgir" class="button-link" target="_blank">TWITTER</a>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="InnerTile">
+
+                            <div class="IN_Title">LinkedIn</div>
+
+                            <div class="hidden">
+
+                                <a href="https://www.linkedin.com/in/sunil-kumar-5a885657" class="button-link" target="_blank">LINKEDIN</a>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="Bottom_Section">
+
+            <div class="Bottom_Left" style="margin-top: 5px;">
+
+                <div class="Bottom_Left_Wrapper"></div>
+
+            </div>
+
+            <div class="Bottom_Right" style="margin-top: 5px;">
+
+                <div class="Bottom_Right_Wrapper"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"> </script>
+
+    <script>
+
+        var sCurrentTile;
+
+        var sPreviousTile;
+
+        var bRefresh = true;
+
+        var imageLinkIndex;
+
+        var oImageLinks = {
+
+            1: 'http://i.imgur.com/8Jirdua.jpg', //sameer
+
+            2: 'http://i.imgur.com/2XE4cfi.jpg', // ankit gupta
+
+            3: 'http://i.imgur.com/1gKtDYH.jpg', //abhyraj
+
+            4: 'http://i.imgur.com/W6lKYfc.jpg', //vishwender
+
+            5: 'http://i.imgur.com/1eChekJ.jpg', //bartendu
+
+            6: 'http://i.imgur.com/IEaoaCT.jpg', //ankit yadav
+
+            7: 'http://i.imgur.com/UlEZLbe.jpg', //Bharat
+
+            8: 'http://i.imgur.com/agFu64C.jpg', //chandraveer
+
+            9: 'http://i.imgur.com/0P7v6tn.png', //Anurag And
+
+            10: 'http://i.imgur.com/IG5E6HC.jpg', // anurag BE
+
+            11: 'http://i.imgur.com/Hl30ZtU.jpg', //Mohit
+
+            12: 'http://i.imgur.com/YFjLX6I.jpg', //shivani
+
+            13: 'http://i.imgur.com/2u7uGBX.jpg', //Manu
+
+            14: 'http://i.imgur.com/uhNVfd9.jpg', //varun
+
+            15: 'http://i.imgur.com/G7LMwZJ.jpg',
+
+            16: 'http://i.imgur.com/QBXHTUV.jpg',
+
+            17: 'http://i.imgur.com/vOtjyX5.jpg',
+
+            18: 'http://i.imgur.com/7brxkJW.jpg',
+
+            19: 'http://i.imgur.com/iLYlx6r.jpg',
+
+            20: 'http://i.imgur.com/Vv70pre.jpg'
+
+        };
+
+
+
+        $(document).ready(function () {
+
+            $(".Bottom_Section > .Bottom_Left, .Bottom_Section > .Bottom_Right").css("margin-top", "5px");
+
+            $(".InnerTile > div:not(:first-child)").addClass('hidden');
+
+            $('.Tiles').click(function () {
+
+                if (sCurrentTile === undefined) {
+
+                    sCurrentTile = $(this).data('tilecount');
+
+                    sPreviousTile = sCurrentTile;
+
+                    bRefresh = true;
+
+                }
+
+                else {
+
+                    sCurrentTile = $(this).data('tilecount');
+
+                    bRefresh = sCurrentTile === sPreviousTile ? false : true;
+
+                    sPreviousTile = sCurrentTile;
+
+                }
+
+                if (bRefresh) {
+
+                    $('.IN_Title').css('margin-left', '600px').css('margin-left', '0px');
+
+                    $(".Bottom_Right_Wrapper").html($(this).find(".hidden").html());
+
+                    $(".Bottom_Left_Wrapper").find(".Bottom_LeftShow").removeClass('Bottom_LeftShow').addClass('Bottom_LeftHide');
+
+                    $(".InnerTile").click(function () {
+
+                        $(this).css('border-color', 'black').css('color', 'red').addClass('InnerTileAnimationClick');
+
+                        $(".Bottom_Left_Wrapper").html($(this).find(".hidden")[0].outerHTML);
+
+                        imageLinkIndex = $(this).find(".hidden").data('innertilecount');
+
+                        $(".Bottom_Left_Wrapper").find(".hidden").removeClass('hidden').addClass('Bottom_LeftShow');
+
+                        $(".Bottom_LeftShow").css('background', "url(" + oImageLinks[imageLinkIndex] + ") no-repeat").css('background-size', 'contain');
+
+                    });
+
+                }
+
+            });
+
+        });
+
+    </script>
+
+
+
+
+
+</body></html>
